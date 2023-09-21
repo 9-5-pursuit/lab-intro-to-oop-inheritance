@@ -46,18 +46,18 @@ class Tamagotchi {
         }
     }
     play() {
-        if (this.energy <= 3) {
+        if (this.sick) {
+            this.mood--;
             this.energy--;
-        } else if (this.mood > 9 && this.sick === false) {
+        } else if (this.mood > 9) {
             this.energy -= 2;
             this.full--;
-        } else if (!this.sick) {
+        } else if (this.energy <= 3) {
+            this.energy--;
+        } else {
             this.energy--;
             this.mood += 2;
             this.full--;
-        } else {
-            this.mood--;
-            this.energy--;
         }
     }
     sleep() {
