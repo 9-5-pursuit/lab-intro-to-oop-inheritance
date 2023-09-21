@@ -53,6 +53,7 @@ class Tamagotchi {
             this.energy -= 2;
             this.full--;
         } else if (this.energy <= 3) {
+            console.log("I am too tired to play");
             this.energy--;
         } else {
             this.energy--;
