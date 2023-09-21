@@ -12,13 +12,22 @@ class Food {
 
   isFresh() {
     if (this.daysToSpoil <= 0) {
-      console.log(`${this.name} has spoiled`);
+      console.log(`${this.name} has spoiled.`);
     } else {
       console.log(
-        `There are ${this.daysToSpoil} days left before the ${this.name} spoils.`
+        `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
       );
     }
   }
+
+  aDayPasses() {
+    this.daysToSpoil--;
+    return this.isFresh();
+  }
 }
+
+const sampler = new Food();
+console.log(sampler.aDayPasses());
+
 // Do not edit below this line
 module.exports = Food;
