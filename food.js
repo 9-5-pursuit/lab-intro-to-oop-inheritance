@@ -9,6 +9,16 @@ class Food {
   prepare() {
     console.log(`${this.name} is being prepared`);
   }
+
+  isFresh() {
+    if (this.daysToSpoil <= 0) {
+      console.log(`${this.name} has spoiled`);
+    } else {
+      console.log(
+        `There are ${this.daysToSpoil} days left before the ${this.name} spoils.`
+      );
+    }
+  }
 }
 // Do not edit below this line
 module.exports = Food;
