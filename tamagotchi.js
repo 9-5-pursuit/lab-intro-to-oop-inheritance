@@ -77,14 +77,9 @@ class Tamagotchi {
         }
     }
     badGuardian() {
-        if (this.energy <= 0) {
+        if (this.energy <= 0 || this.mood <= 0 || this.full <= 0) {
             this.rehomed = true;
-        }
-        if (this.mood <= 0) {
-            this.rehomed = true;
-        }
-        if (this.full <= 0) {
-            this.rehomed = true;
+            console.log("Tamagotchi has been rehomed.");
         }
     }
 }
