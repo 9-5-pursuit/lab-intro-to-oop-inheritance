@@ -11,7 +11,7 @@ class Tamagotchi {
     }
 
     greet() {
-        if (this.rehomedg !== true) {
+        if (this.rehomed !== true) {
             console.log(`Hello, I'm ${this.name}`);
         } else {
             console.log(`${this.name} has been rehomed. They can no longer greet you.`);
