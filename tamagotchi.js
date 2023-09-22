@@ -15,12 +15,7 @@ class Tamagotchi {
 
     status() {
 
-        let sickMessage;
-        if (this.sick === false) {
-            sickMessage = "I am not sick"
-        } else {
-            sickMessage = "I am sick"
-        };
+        const sickMessage = this.sick === false ? "I am not sick" : "I am sick";
         
         console.log(`My mood is: ${this.mood} I am this full: ${this.full} My energy is: ${this.energy} ${sickMessage}`);
     }
@@ -31,6 +26,17 @@ class Tamagotchi {
 
         if (this.full > 10) {
             this.sick = true
+        }
+    }
+
+    medicate() {
+        if (this.sick === true) {
+            this.full = 9;
+            this.energy -= 3;
+            this.sick = false;
+        } else {
+            console.log("Refuses to take medicine");
+            this.energy -= 1
         }
     }
 }
