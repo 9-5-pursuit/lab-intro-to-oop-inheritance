@@ -51,11 +51,17 @@ class Tamagotchi {
             console.log("I am too tired to play")
             this.energy -= 1
         }
+        //default play behavior if not sick
         else {
             this.mood += 2;
             this.energy -= 1;
             this.full -= 1;
         }
+    }
+
+    sleep() {
+        this.energy += 4
+        this.full -= 3
     }
 }
 // Do not edit below this line
