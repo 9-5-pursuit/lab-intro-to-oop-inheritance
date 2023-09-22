@@ -11,10 +11,10 @@ class Tamagotchi {
     }
 
     greet() {
-        if (this.rehomed !== true) {
+        if (this.rehomedg !== true) {
             console.log(`Hello, I'm ${this.name}`);
         } else {
-            console.log(`${this.name} has been rehomed. They can no longer greet you.`)
+            console.log(`${this.name} has been rehomed. They can no longer greet you.`);
         } 
     }
 
@@ -29,7 +29,7 @@ class Tamagotchi {
             **********
             `);
         } else {
-            console.log(`${this.name} has been rehomed. They can no longer tell you their status.`)
+            console.log(`${this.name} has been rehomed. They can no longer tell you their status.`);
         } 
     }
 
@@ -46,7 +46,7 @@ class Tamagotchi {
                 this.sick = true;
             }
         } else {
-            console.log(`${this.name} has been rehomed. They can no longer eat.`)
+            console.log(`${this.name} has been rehomed. They can no longer eat.`);
         } 
     }
 
@@ -55,6 +55,7 @@ class Tamagotchi {
             if (this.sick) {
                 this.full = 9;
                 this.energy -= 3;
+                this.sick = false;
             } else {
                 console.log("refused to take medicine X(");
                 this.energy--;
@@ -64,7 +65,7 @@ class Tamagotchi {
                 this.badGuardian();
             }
         } else {
-            console.log(`${this.name} has been rehomed. They can no longer be medicated.`)
+            console.log(`${this.name} has been rehomed. They can no longer be medicated.`);
         } 
     }
 
@@ -92,7 +93,7 @@ class Tamagotchi {
                 this.badGuardian();
             }
         } else {
-            console.log(`${this.name} has been rehomed. They can no longer play.`)
+            console.log(`${this.name} has been rehomed. They can no longer play.`);
         }
 
     }
@@ -106,24 +107,28 @@ class Tamagotchi {
                 this.badGuardian();
             }
         } else {
-            console.log(`${this.name} has been rehomed. They can no longer sleep.`)
+            console.log(`${this.name} has been rehomed. They can no longer sleep.`);
         } 
     }
 
     timePasses() {
-        if (this.sick) {
-            this.mood -= 3;
-            this.full -= 2;
-            this.energy -= 2;
+        if (this.rehomed !== true) {
+            if (this.sick) {
+                this.mood -= 3;
+                this.full -= 2;
+                this.energy -= 2;
+            } else {
+                this.mood -= 2;
+                this.full -= 1;
+                this.energy -= 1;
+            }
+    
+            if (this.energy <= 0 || this.full <= 0 || this.mood <= 0) {
+                this.badGuardian();
+            }
         } else {
-            this.mood -= 2;
-            this.full -= 1;
-            this.energy -= 1;
-        }
-
-        if (this.energy <= 0 || this.full <= 0 || this.mood <= 0) {
-            this.badGuardian();
-        }
+            console.log(`${this.name} has been rehomed. Time can no longer pass.`);
+        } 
     }
 
     badGuardian() {
@@ -135,6 +140,28 @@ class Tamagotchi {
 const froggy = new Tamagotchi("Froggy")
 
 froggy.greet()
+
+froggy.sleep()
+
+froggy.eat()
+
+froggy.timePasses()
+
+froggy.play()
+
+froggy.status()
+
+froggy.eat()
+froggy.eat()
+froggy.eat()
+
+froggy.status()
+
+froggy.timePasses()
+froggy.timePasses()
+froggy.timePasses()
+
+
 
 // Do not edit below this line
 module.exports = Tamagotchi;
