@@ -71,5 +71,11 @@ class Tamagotchi {
         }
     }
 }
+class BadFood extends Food {
+    constructor(name, daysToSpoil, fresh) {
+        super(name, daysToSpoil, fresh)
+        this.weapons= [{'hitpoints':3},{'hitpoints':4},{'hitpoints':5}]
+    }
+}
 // Do not edit below this line
 module.exports = Tamagotchi;
