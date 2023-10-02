@@ -14,6 +14,12 @@ class Tamagotchi {
     status(){
         console.log(`******************\nMy Mood is: ${this.mood}\nI am this full: ${this.full}\nMy energy is: ${this.energy}\n${this.sick?`I am sick`: `I am not sick`}\n******************`)
     }
+    eat(){
+        this.full+=2
+        this.energy--
+        if (this.full>10)
+        this.sick=true
+    }
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
