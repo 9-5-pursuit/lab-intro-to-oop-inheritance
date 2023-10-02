@@ -22,5 +22,14 @@ class Food {
     }
 
 }
+class BadFood extends Food {
+    constructor(name, daysToSpoil, fresh) {
+        super(name, daysToSpoil, fresh)
+        this.weapons= [{'hitpoints':3},{'hitpoints':4},{'hitpoints':5}]
+    }
+    prepare(){
+        console.log(`I am ${this.name} and my calories are too high to count!`)
+    }
+}
 // Do not edit below this line
 module.exports = Food;
