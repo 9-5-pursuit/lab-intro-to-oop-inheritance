@@ -8,6 +8,9 @@ class Tamagotchi {
     this.sick = sick || false
     this.rehomed = rehomed || false
     }
+    greet(){
+        console.log(`Hello, I'm ${this.name}`)
+    }
 
 }
 // Do not edit below this line
