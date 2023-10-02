@@ -11,7 +11,9 @@ class Tamagotchi {
     greet(){
         console.log(`Hello, I'm ${this.name}`)
     }
-
+    status(){
+        console.log(`******************\nMy Mood is: ${this.mood}\nI am this full: ${this.full}\nMy energy is: ${this.energy}\n${this.sick?`I am sick`: `I am not sick`}\n******************`)
+    }
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
