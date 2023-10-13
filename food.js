@@ -17,6 +17,11 @@ class Food {
         console.log(`${this.name} has spoiled.`)
     }
     }
+
+    aDayPasses() {
+        this.daysToSpoil--;
+        this.isFresh()
+    }
 }
 
 // Do not edit below this line
