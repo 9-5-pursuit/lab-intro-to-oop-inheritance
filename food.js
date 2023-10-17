@@ -2,7 +2,7 @@
 class Food {
   constructor(name, daysToSpoil, fresh = true) {
     this.name = name;
-    this.daysToSpoil = 10;
+    this.daysToSpoil = daysToSpoil;
     this.fresh = fresh;
   }
   prepare() {
