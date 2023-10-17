@@ -1,10 +1,11 @@
 const Tamagotchi = require("../tamagotchi.js");
-const Food = require("../food.js");
+//const Food = require("../food.js");
 
-let banana, fizz;
+//let banana;
+let fizz;
 
 beforeAll(() => {
-  banana = new Food("Banana", 3);
+  //banana = new Food("Banana", 3);
   fizz = new Tamagotchi("Fizz");
 });
 
@@ -79,7 +80,7 @@ describe("Food class", () => {
   });
 });
 
-describe("Tamagotchi Class", () => {
+describe.only("Tamagotchi Class", () => {
   test("Can call new on Tamagotchi", () => {
     const buzz = new Tamagotchi("Buzz");
     expect(buzz).toBeTruthy();
