@@ -23,5 +23,18 @@ class Food {
     this.isFresh(); 
   }
 }
+//Testing the food class 
+const iceCream = new Food('ice cream', 3);
+
+iceCream.prepare();
+iceCream.isFresh();
+
+//Day passes
+
+iceCream.aDayPasses();
+
+//Check freshness again
+iceCream.isFresh();
+
 // Do not edit below this line
 module.exports = Food;
