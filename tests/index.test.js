@@ -1,11 +1,11 @@
 const Tamagotchi = require("../tamagotchi.js");
-//const Food = require("../food.js");
+const Food = require("../food.js");
 
-//let banana;
+let banana;
 let fizz;
 
 beforeAll(() => {
-  //banana = new Food("Banana", 3);
+  banana = new Food("Banana", 3);
   fizz = new Tamagotchi("Fizz");
 });
 
