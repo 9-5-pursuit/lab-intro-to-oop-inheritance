@@ -12,13 +12,14 @@ class Food {
 
   isFresh() {
     if (this.daysToSpoil === 0) {
-      console.log(`eeewww what an old ${this.name} has spoiled.`);
-   
-    } else {
+      this.fresh = false;
+    }
+    if (this.fresh) {
       console.log(
         `There are ${this.daysToSpoil} days left before ${this.name} spoils.`
       );
-      
+    } else {
+      console.log(`eeewww what an old ${this.name} has spoiled.`);
     }
   }
 

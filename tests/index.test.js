@@ -80,7 +80,7 @@ describe("Food class", () => {
   });
 });
 
-describe.only("Tamagotchi Class", () => {
+describe("Tamagotchi Class", () => {
   test("Can call new on Tamagotchi", () => {
     const buzz = new Tamagotchi("Buzz");
     expect(buzz).toBeTruthy();
