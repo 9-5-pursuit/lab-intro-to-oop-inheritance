@@ -35,6 +35,30 @@ class Tamagotchi {
         }
 
     }
+    play() {
+        if (this.sick) {
+            console.log("I am too sick to play.");
+            this.mood--;
+            this.energy--;
+            return;
+        }
+
+        if (this.mood >= 9) {
+            console.log("I am too happy to play.");
+            this.energy -= 2;
+            this.full--;
+            return;
+        }
+
+        if (this.energy <= 3) {
+            console.log("I am too tired to play");
+            this.energy--;
+            return;
+        }
+        this.mood +=2;
+        this.energy--;
+        this.full--;
+    }
 }
 // Do not edit below this line
 module.exports = Tamagotchi;
