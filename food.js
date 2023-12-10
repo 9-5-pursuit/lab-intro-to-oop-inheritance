@@ -16,6 +16,9 @@ class Food{
         if(this.fresh===true){
 
             console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils`)
+        }else if(this.daysToSpoil<=0){
+            console.log(`${this.name} had spoiled.`)
+
         }
 
     }
