@@ -23,6 +23,14 @@ class Food{
 
     }
 
+    //here I am adding my second method
+    aDayPasses(){
+
+        this.daysToSpoil -= 1
+        this.isFresh()
+       
+    }
+
 
 
 }
