@@ -31,6 +31,11 @@ class Food{
        
     }
 
+    //here i forgot to add days to spoil not sure if order matters in the stack i figured the conditions should be met first so you know if the food is fresh before preparataion 
+    prepare(){
+        console.log(`${this.name} is being prepared`)
+    }
+
 
 
 }
