@@ -4,7 +4,7 @@
 // here I created my food class
 class Food{
 
-    constructor(name,daysToSpoil,fresh=true){//adding constructor and attributes
+    constructor(name,daysToSpoil,fresh){//adding constructor and attributes
             this.name=name
             this.daysToSpoil=daysToSpoil
             this.fresh=fresh
@@ -39,5 +39,16 @@ class Food{
 
 
 }
+//test 1
+
+const  createFoodItem=(name,daysToSpoil)=>{//here i created a function called create food item
+    const newFood= new Food(name,daysToSpoil,true)//im declaring newFood to equal the creation of a new Food class, passing params name and days to spoil/ so arguements can be passed in when the function is called/invoked
+                                                
+    newFood.isFresh()//checking to see if the created new food is fresh
+    return newFood // returning the whole process
+
+
+}
+createFoodItem("Pizza",5)
 // Do not edit below this line
 module.exports = Food;
