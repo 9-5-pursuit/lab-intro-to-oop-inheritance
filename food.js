@@ -15,7 +15,7 @@ class Food{
     isFresh(){
         if(this.fresh===true){
 
-            console.log(`There are 3 days left before ${this.name} spoils`)
+            console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils`)
         }
 
     }
