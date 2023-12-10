@@ -13,7 +13,11 @@ class Food{
     }
     //here I am adding my first method 
     isFresh(){
-        
+        if(this.fresh===true){
+
+            console.log(`There are 3 days left before ${this.name} spoils`)
+        }
+
     }
 
 
