@@ -48,12 +48,12 @@ banana.isFresh()
 // const bananaCreamPie = new Food("BananaCreamPie", 4);
 // console.log(bananaCreamPie)
 // //My test 1
-// const iceCream=new Food('Chococlate Ice Cream',3)//creating ice cream instance
-// console.log(iceCream.isFresh()) //calling method is fresh to check if icecream is fresh
-// console.log(iceCream.prepare())//its fresh ok lets prepare it
-// console.log(iceCream.aDayPasses())//calling a day passes method which subtracts a day and then check if it is fresh(2nd day)
-// console.log(iceCream.aDayPasses())//a day passes again (day1)
-// console.log(iceCream.aDayPasses())//a day passes again checking to see if it is still fresh (it has spoiled at this point in this test case)
+const iceCream=new Food('Chococlate Ice Cream',3)//creating ice cream instance
+iceCream.isFresh()//calling method is fresh to check if icecream is fresh
+iceCream.prepare()//its fresh ok lets prepare it
+iceCream.aDayPasses()//calling a day passes method which subtracts a day and then check if it is fresh(2nd day)
+iceCream.aDayPasses()//a day passes again (day1)
+iceCream.aDayPasses()//a day passes again checking to see if it is still fresh (it has spoiled at this point in this test case)
 
 
 

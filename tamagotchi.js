@@ -29,7 +29,7 @@ eat(){
 }
 // medicate:
 
-// if tamagotchi is sick - set full to 9 - decrease energy by 3
+// if tamagotchi is sick - set full to 9 - decrease energy by 3(missing onw case in inatrucriona but figured it out sick has to be false after medicated)
 // if tamagotchi is not sick
 // console log refusal to take medicine
 // reduce energy by 1
@@ -139,4 +139,5 @@ newPet.play()
 const test2= new Tamagotchi("ShakaTest2",0)
 console.log(test2)
 test2.badGuardian()
+newPet.badGuardian()
 module.exports=Tamagotchi;
