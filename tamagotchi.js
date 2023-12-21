@@ -1,7 +1,7 @@
 // Create class below
 
 
-class tamagotchi{
+class       Tamagotchi{
     constructor(name,energy=9,full=8,mood=6,sick=false,rehomed=false){
         this.name=name
         this.energy=energy
@@ -19,9 +19,22 @@ class tamagotchi{
 
     }
     eat(){
+        while(this.sick===false){
+        if(this.full>10){
+
+
+
+            this.sick=true
+
+
+        }
+        this.full+=2
+        this.energy-=1
         
 
+
     }
+}
     medicate(){
 
     }
@@ -45,6 +58,11 @@ class tamagotchi{
 
 
 }
-
+const newPet=new Tamagotchi('Shakagatchi')
+console.log(newPet)
+newPet.eat()
+console.log(newPet)
+newPet.eat()
+console.log(newPet)
 // Do not edit below this line
 module.exports = Tamagotchi;
