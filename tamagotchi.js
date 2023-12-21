@@ -1,8 +1,8 @@
 // Create class below
 
 
-class       Tamagotchi{
-    constructor(name,energy=9,full=8,mood=6,sick=false,rehomed=false){
+class   Tamagotchi{
+    constructor(name="",energy=9,full=8,mood=6,sick=false,rehomed=false){
         this.name=name
         this.energy=energy
         this.full=full
@@ -10,7 +10,7 @@ class       Tamagotchi{
         this.sick=sick
         this.rehomed=rehomed
     }
-    greet(){
+ greet(){
         return `Hello, I'm ${this.name}!`
 
     }
@@ -18,23 +18,32 @@ class       Tamagotchi{
         return `My energy level is a: ${this.energy},I am this full:${this.full} my mood level is :${this.mood},${this.sick?'I am sick':'I am not Sick!'}`
 
     }
-    eat(){
-        while(this.sick===false){
-        if(this.full>10){
+//     eat: increases fullness by two, decreases energy by 1,
+// if eat method makes fullness more than 10, tamagotchi becomes sick (sick = true)
+eat(){
+    this.full+=2 
+    this.energy-=1
+    if(this.full>10){
+        this.sick=true
+    }
+}
+//     eat(){
+//         while(this.sick===false){
+//         if(this.full>10){
 
 
 
-            this.sick=true
+//             this.sick=true
 
 
-        }
-        this.full+=2
-        this.energy-=1
+//         }
+//         this.full+=2
+//         this.energy-=1
         
 
 
-    }
-}
+//     }
+// }
     medicate(){
         if(this.sick===true){
             this.full+=9
@@ -77,16 +86,25 @@ class       Tamagotchi{
         if(this.sick===true){
             this.mood-=3
             this.full-=2
-        }else{
-            this.mood-=2
-            this.full-=1
-            this.energy-=1
+            this.energy-=2
         }
+            if(this.sick===false){
+
+                this.mood-=2
+                this.full-=1
+                this.energy-=1
+            }
+        
 
     }
     badGuardian(){
+        if(this.energy<=0||this.mood<=0||this.full<-0){
+            this.rehomed=true
+            return console.log(`${this.name} has been rehomed your energy,mood,or full is depleted !`)
+        }
 
     }
+
 
 
 
@@ -95,6 +113,9 @@ class       Tamagotchi{
 
 
 }
+
+let fizz= new Tamagotchi("Fizz")
+console.log(fizz)
 const test= new Tamagotchi('test',3)
 test.play()
 console.log(test)
@@ -104,21 +125,24 @@ test.timePasses()
 console.log(test)
 test.sleep()
 console.log(test)
-// const newPet=new Tamagotchi('Shakagatchi')
+const newPet=new Tamagotchi('Shakagatchi')
+console.log(newPet)
+newPet.play()
 // console.log(newPet)
-// newPet.play()
-// // console.log(newPet)
-// newPet.medicate()
-// console.log(newPet)
-// newPet.eat()
-// console.log(newPet)
-// newPet.eat()
-// newPet.eat()
-// newPet.eat()
-// newPet.eat()
-// newPet.eat()
-// newPet.play()
-// console.log(newPet)
-// newPet.play()
+newPet.medicate()
+console.log(newPet)
+newPet.eat()
+console.log(newPet)
+newPet.eat()
+newPet.eat()
+newPet.eat()
+newPet.eat()
+newPet.eat()
+newPet.play()
+console.log(newPet)
+newPet.play()
 
-module.exports = Tamagotchi;
+const test2= new Tamagotchi("ShakaTest2",0)
+console.log(test2)
+test2.badGuardian()
+module.exports=Tamagotchi;
