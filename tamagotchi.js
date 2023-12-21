@@ -27,32 +27,26 @@ eat(){
         this.sick=true
     }
 }
-//     eat(){
-//         while(this.sick===false){
-//         if(this.full>10){
+// medicate:
 
-
-
-//             this.sick=true
-
-
-//         }
-//         this.full+=2
-//         this.energy-=1
-        
-
-
-//     }
-// }
+// if tamagotchi is sick - set full to 9 - decrease energy by 3
+// if tamagotchi is not sick
+// console log refusal to take medicine
+// reduce energy by 1
     medicate(){
-        if(this.sick===true){
-            this.full+=9
+        if(this.sick){
+            this.full=9
             this.energy-=3
+            this.sick=false
 
         }else{
-            this.energy-=1
-            return console.log(`refusal to take medicine`)
-        }
+            if(this.sick===false){
+
+
+                this.energy-=1
+                return console.log(`refusal to take medicine`)
+            }
+            }
 
 
     }
