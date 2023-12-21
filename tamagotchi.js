@@ -36,6 +36,15 @@ class       Tamagotchi{
     }
 }
     medicate(){
+        if(this.sick===true){
+            this.full+=9
+            this.energy-=3
+
+        }else{
+            this.energy-=1
+            return console.log(`refuasal to take medicine`)
+        }
+
 
     }
     play(){
@@ -60,7 +69,8 @@ class       Tamagotchi{
 }
 const newPet=new Tamagotchi('Shakagatchi')
 console.log(newPet)
-newPet.eat()
+// console.log(newPet)
+newPet.medicate()
 console.log(newPet)
 newPet.eat()
 console.log(newPet)
