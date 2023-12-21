@@ -4,7 +4,7 @@
 // here I created my food class
 class Food{
 
-    constructor(name,daysToSpoil,fresh=Boolean){//adding constructor and attributes
+    constructor(name,daysToSpoil,fresh=true){//adding constructor and attributes
             this.name=name
             this.daysToSpoil=daysToSpoil
             this.fresh=fresh
@@ -13,12 +13,12 @@ class Food{
     }
     //here I am adding my first method 
     isFresh(){
-        if(this.fresh===true){
+        if(this.fresh===true&&this.daysToSpoil>=1){
 
-            console.log(`There are ${this.daysToSpoil} days left before ${this.name} spoils`)
-        }else if(this.daysToSpoil<=0){
+          return  `There are ${this.daysToSpoil} days left before ${this.name} spoils`
+        }else {
             this.fresh=false
-            console.log(`${this.name} had spoiled.`)
+          return `${this.name} has spoiled.`
 
         }
 
@@ -28,40 +28,27 @@ class Food{
     aDayPasses(){
 
         this.daysToSpoil -= 1
-        this.isFresh()
+       return  this.isFresh()
        
     }
 
     //here i forgot to add days to spoil not sure if order matters in the stack i figured the conditions should be met first so you know if the food is fresh before preparataion 
     prepare(){
-        console.log(`${this.name} is being prepared`)
+        return `${this.name} is being prepared`
     }
 
 
 
 }
 //My test 1
-
-const  createFoodItem=(name,daysToSpoil)=>{//here i created a function called create food item
-    const newFood= new Food(name,daysToSpoil,true)//im declaring newFood to equal the creation of a new Food class, passing params name and days to spoil/ so arguements can be passed in when the function is called/invoked
-                                                
-    newFood.isFresh()//checking to see if the created new food is fresh
-    newFood.prepare()// the new item is brand new assuming it will always be fresh then we can go ahead and prepare it
-    return newFood // returning the whole process
-
-
-}
-createFoodItem("Pizza",5)
+const iceCream=new Food('Chococlate Ice Cream',3)//creating ice cream instance
+console.log(iceCream.isFresh()) //calling method is fresh to check if icecream is fresh
+console.log(iceCream.prepare())//its fresh ok lets prepare it
+console.log(iceCream.aDayPasses())//calling a day passes method which subtracts a day and then check if it is fresh(2nd day)
+console.log(iceCream.aDayPasses())//a day passes again (day1)
+console.log(iceCream.aDayPasses())//a day passes again checking to see if it is still fresh (it has spoiled at this point in this test case)
 
 
-//my test 2
 
-const twentyFourHours=(name,daysToSpoil)=>{
-    const newFood= new Food(name,daysToSpoil,true)
-    newFood.aDayPasses()//24 hours has passed less take a day off this food
 
-}
-twentyFourHours('milk',2)//if it works it should take a day off this item
-twentyFourHours('oranges',1)//this should take a day off making it spoiled and retruning the spoiled message from isFresh()
-// Do not edit below this line
-module.exports = Food;
+
